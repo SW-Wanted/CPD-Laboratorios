@@ -1,20 +1,24 @@
-# 2. Gestor de tarefas pessoais
-Construa uma aplicação de organização pessoal que permite gerir as tarefas pendentes de uma pessoa. Cada tarefa: é identificada por uma sequência de caracteres única que, por simplicidade, não pode conter espaços;
-tem uma prioridade, definida por um inteiro entre 0 e 5 (5 é mais prioritária, 0 é menos prioritária).
+# Exercício 02: Gestor de Tarefas Pessoais
 
-A aplicação tem os seguintes comandos:
-```bash
-$ new <prioridade> <id-nova-tarefa>
-```
-> que insere a nova tarefa;
+Criar um sistema que gerencie tarefas identificadas por IDs únicos, com níveis de prioridade de 0 (mínima) a 5 (máxima). O sistema deve suportar:
+1.  **Inserção** de novas tarefas.
+2.  **Listagem** filtrada por prioridade (ordenada da mais prioritária para a menos prioritária).
+3.  **Conclusão** de tarefas com remoção da lista.
 
-```bash
-$ list <prioridade>
-```
-> que lista todas as tarefas com tarefa da prioridade indicada ou superior; a listagem deve estar ordenada por prioridade (mais prioritárias primeiro) e, entre tarefas igualmente prioritárias, por data de criação (mais recentes primeiro);
-```bash
-$ complete <id-nova-tarefa>
-```
-> que retira a tarefa indicada; caso a tarefa não exista, deve ser apresentada a mensagem de erro "TAREFA INEXISTENTE”.
+---
 
->Sugestão: usar tantas listas quanto níveis de prioridade.
+## 🚀 Comandos
+
+| Comando | Descrição |
+| :--- | :--- |
+| `new <prioridade> <id>` | Adiciona uma tarefa ao nível especificado (0-5). |
+| `list <prioridade>` | Lista tarefas com nível igual ou superior ao informado. |
+| `complete <id>` | Finaliza e remove a tarefa. Retorna erro se o ID não existir. |
+
+## 💡 Exemplo de Uso
+```bash
+$ new 5 UrgentTask
+$ new 2 LowPriorityTask
+$ list 3
+$ complete UrgentTask
+$ quit
