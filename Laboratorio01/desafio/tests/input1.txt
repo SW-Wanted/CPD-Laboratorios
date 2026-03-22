@@ -1,0 +1,2 @@
+fibonacci 5000
+exit

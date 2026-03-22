@@ -1,0 +1,3 @@
+nao_existe
+fibonacci 3000
+exit
