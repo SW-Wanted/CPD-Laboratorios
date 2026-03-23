@@ -57,6 +57,11 @@ typedef struct lst_iitem {
 ```
 
 ### Funções Principais
+
+```c
+void update_terminated_process(list_t *list, int pid, time_t endtime);
+```
+
 - `update_terminated_process()`: Percorrer a lista, encontrar o `pid` alvo e atualizar o campo `endtime`
 
 ### Compilação
@@ -531,7 +536,7 @@ $ make main
 # Resultado: Apenas ficheiros alterados são recompilados
 ```
 
-### 💡 Boas Práticas
+### 💡 Dicas
 1. **Use variáveis** para compilador e flags
 2. **Defina dependências** correctamente
 3. **Adicione phony targets** como `clean`, `test`
@@ -540,7 +545,7 @@ $ make main
 
 ---
 
-## 📚 Resumo de Conceitos Aprendidos
+## 📚 Resumo
 
 ### Nível 1: Básico
 ✅ Compilação em C com GCC  
@@ -565,9 +570,9 @@ $ make main
 
 ---
 
-## 🎓 Checklist de Domínio
+## 🎓 Aprendizado
 
-Após completar este laboratório, deverá estar apto a:
+Após completar este laboratório, é esperado eu aprender o seguinte:
 
 ### ✓ Estruturas de Dados
 - [ ] Percorrer listas ligadas e atualizar nós específicos
@@ -596,7 +601,7 @@ Após completar este laboratório, deverá estar apto a:
 
 ---
 
-## 🚀 Próximos Passos
+## 🚀 Outras ferramentas
 
 1. **Valgrind**: Ferramenta para detectar memory leaks
    ```bash
@@ -658,9 +663,3 @@ gcc -g -Wall -Wextra -o prog main.c
 # Otimizado
 gcc -O2 -o prog main.c
 ```
-
----
-
-**Parabéns! Completou o Laboratório 01! 🎉**
-
-Tem agora uma compreensão sólida de C, debugging, estruturas de dados e processamento de múltiplos processos.
