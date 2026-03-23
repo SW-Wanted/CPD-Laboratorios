@@ -1,4 +1,4 @@
-# 📚 Laboratório 01:
+# 📚 Laboratório 01
 
 ## 🎯 Objectivos do Laboratório
 
@@ -16,7 +16,7 @@ Este laboratório cobre:
 
 ```
 Laboratorio01/
-├── ex01/           # Implementação de Lista Ligada com Processos
+├── ex01/           # Implementação da função update_terminated_process
 ├── ex02/           # Sistema de Gestão de Tarefas
 ├── desafio/        # Terminal Paralelo (Fork/Exec + Threads)
 └── README.md       # Este arquivo
@@ -36,9 +36,9 @@ Laboratorio01/
 
 ---
 
-## 📖 [Exercício 01](./ex01/): Implementação de Lista Ligada
+## 📖 [Exercício 01](./ex01/): Implementação de uma Função
 
-**Objectivo**: Implementar e manipular uma lista ligada que armazena informações de processos.
+**Objectivo**: Implementar a função `update_terminated_process` para percorrer a lista ligada de processos e atualizar o `endtime` de um PID específico.
 
 ### Conceitos Aprendidos
 - **Estruturas (structs)**: Organização de dados relacionados
@@ -46,7 +46,7 @@ Laboratorio01/
 - **Listas Ligadas**: Estrutura de dados fundamental
 - **Alocação Dinâmica**: `malloc()` e `free()`
 
-### O que Implementar
+### Contexto da Estrutura
 ```c
 typedef struct lst_iitem {
    int pid;              // Identificador único do processo
@@ -57,10 +57,7 @@ typedef struct lst_iitem {
 ```
 
 ### Funções Principais
-- `lst_new()`: Criar uma nova lista vazia
-- `lst_destroy()`: Liberar toda a memória da lista
-- `insert_new_process()`: Adicionar novo processo à lista
-- `update_terminated_process()`: Atualizar tempo de conclusão de um processo
+- `update_terminated_process()`: Percorrer a lista, encontrar o `pid` alvo e atualizar o campo `endtime`
 
 ### Compilação
 ```bash
@@ -573,7 +570,7 @@ $ make main
 Após completar este laboratório, deverá estar apto a:
 
 ### ✓ Estruturas de Dados
-- [ ] Implementar listas ligadas do zero
+- [ ] Percorrer listas ligadas e atualizar nós específicos
 - [ ] Compreender ponteiros e alocação dinâmica
 - [ ] Evitar memory leaks
 - [ ] Manipular múltiplas listas
@@ -642,7 +639,7 @@ gdb ./program
 
 ### Sistema de Ficheiros Lab
 ```
-ex01/  → Lista simples com processos
+ex01/  → Implementação da função update_terminated_process
 ex02/  → Arrays de listas com prioridades
 desafio/ → Fork/Exec + Threads + Sincronização
 ```
