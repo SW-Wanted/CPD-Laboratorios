@@ -5,4 +5,4 @@
 ## 🗂 Laboratórios
 | Pasta | Descrição | Status |
 | :--- | :--- | :--- |
-| [Laboratório 01](./Laboratorio01) | Introdução ao Unix, GCC, GDB e Criação do `cpd-terminal`. | ⏳ Em progresso  |
+| [Laboratório 01](./Laboratorio01) | Introdução ao Unix, GCC, GDB e Criação do `cpd-terminal`. | ✅ Concluído  |
