@@ -25,12 +25,13 @@ int main(int argc, char *argv[]) {
       tid = omp_get_thread_num();
 
 /* divide loop iterations evenly by threads */
-#pragma omp for
+#pragma omp for nowait
     for(i = 0; i < NUMITER; i++)
 	  	printf("Thread: %d\titer=%d\n", tid, i);  fflush(stdout);
 
     /* one of these messages per thread */
     printf("Thread %d, almost..\n", tid);fflush(stdout);
+    #pragma omp barrier
     printf("Thread %d, done!\n", tid);  fflush(stdout);
   }
 

@@ -32,28 +32,36 @@ int main(int argc, char *argv[]) {
   int i, iter;
 
   /* DECLARE VECTOR AND AUX DATA STRUCTURES */
-  double *V = (double *) malloc(TOTALSIZE * sizeof(double));
+  double *src = (double *) malloc(TOTALSIZE * sizeof(double));
+  double *dst = (double *) malloc(TOTALSIZE * sizeof(double));
+  double *tmp;
 
   /* 1. INITIALIZE VECTOR */
   for(i = 0; i < TOTALSIZE; i++) {
-    V[i]= 0.0 + i;
+    src[i] = 0.0 + i;
   }
 
   /* 2. ITERATIONS LOOP */
   for(iter = 0; iter < NUMITER; iter++) {
-
     /* 2.1. PROCESS ELEMENTS */
+    #pragma omp parallel for
     for(i = 0; i < TOTALSIZE-1; i++) {
-      V[i] = f(V[i], V[i+1]);
+      dst[i] = f(src[i], src[i+1]);
     }
-    
+    dst[TOTALSIZE-1] = src[TOTALSIZE-1];
+    tmp = src;
+    src = dst;
+    dst = tmp;
     /* 2.2. END ITERATIONS LOOP */
   }
 
   /* 3. OUTPUT FINAL VALUES */
   printf("Output:\n"); 
   for(i = 0; i < TOTALSIZE; i++) {
-    printf("%4d %f\n", i, V[i]);
+    printf("%4d %f\n", i, src[i]);
   }
 
+  /* 4. FREE MEMORY */
+  free(src);
+  free(dst);
 }
