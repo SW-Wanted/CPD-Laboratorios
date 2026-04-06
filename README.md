@@ -1,6 +1,6 @@
 # CPD - Laboratórios
 
-*Este projeto foi criado como parte do currículo do ISPTEC por Emanuel dos Santos.*
+**Computação Paralela e Distribuída** - Laboratórios realizados durante o ano lectivo **2025/2026** na turma **EIN6_M3** por  **Emanuel dos Santos**.
 
 ## 🗂 Laboratórios
 | Pasta | Descrição | Status |
