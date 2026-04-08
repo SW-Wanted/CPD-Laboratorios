@@ -11,6 +11,7 @@ Introduzir o OpenMP
 ```
 Laboratorio02/
 ├── Emanuel dos Santos - Memorando.docx
+├── Emanuel dos Santos - Memorando.pdf
 ├── omp1.c
 ├── omp2.c
 └── README.md
